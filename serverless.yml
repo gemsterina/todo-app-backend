@@ -7,7 +7,7 @@ provider:
 
 functions:
   tasks:
-    handler: tasks.handler
+    handler: tasks-get.handler
     events:
       - http:
           path: tasks
