@@ -5,15 +5,17 @@ provider:
   runtime: nodejs8.10
   region: eu-west-2
 
+# setup from https://github.com/dougmoscrop/serverless-http/blob/a3c32092e572416bf8a9f059a4cb8004a3299ebf/docs/EXAMPLES.md
+
 functions:
   tasks:
     handler: tasks.handler
     events:
       - http:
-          path: tasks
-          method: get
+          path: / # this matches the base path
+          method: ANY
           cors: true
       - http:
-          path: tasks
-          method: post
+          path: /{any+} # this matches any path, the token 'any' doesn't mean anything special
+          method: ANY
           cors: true
