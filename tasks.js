@@ -33,8 +33,11 @@ app.get('/tasks', function (request, response) {
 
 app.post('/tasks', function (request, response) {
 
+    console.log('You posted a task saying ' + request.body.taskDescription);
+
     const answer = {
-        message: "Your POST request was accepted"
+        message: "Your POST request was accepted",
+        description: request.body.taskDescription
     }
 
     response.json(answer);
