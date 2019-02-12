@@ -2,6 +2,8 @@ const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 app.get('/tasks', function (request, response) {
 
     const taskList = [
